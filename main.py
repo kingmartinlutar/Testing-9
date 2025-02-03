@@ -11,11 +11,11 @@ class Bot(Client):
 
     def __init__(self):
         super().__init__(
-            "techvj login",
+            "king login",
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
-            plugins=dict(root="TechVJ"),
+            plugins=dict(root="king"),
             workers=50,
             sleep_threshold=10
         )
