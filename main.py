@@ -4,10 +4,10 @@ from pyrogram import Client, filters
 from motor.motor_asyncio import AsyncIOMotorClient
 
 # Load environment variables
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-ADMINS = list(map(int, os.getenv("ADMINS", "").split()))
+API_ID = int(os.getenv("25444644"))
+API_HASH = os.getenv("5969730414")
+BOT_TOKEN = os.getenv("8056263089:AAHMI88zp5GyHzeaQS82BKNzGFzEI_5DAPs")
+ADMINS = list(map(int, os.getenv("ADMINS", "5969730414").split()))
 DB_URI = os.getenv("DB_URI")
 ERROR_MESSAGE = os.getenv("ERROR_MESSAGE", "False").lower() == "true"
 
