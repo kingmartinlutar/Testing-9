@@ -1,5 +1,7 @@
 import os
 import asyncio
+from flask import Flask
+from threading import Thread
 from pyrogram import Client, filters
 from motor.motor_asyncio import AsyncIOMotorClient
 
@@ -11,6 +13,8 @@ ADMINS = list(map(int, os.getenv("ADMINS", "").split()))
 DB_URI = os.getenv("DB_URI")
 ERROR_MESSAGE = os.getenv("ERROR_MESSAGE", "False").lower() == "true"
 
+# Initialize Flask app
+app = Flask(__name__)
 # Initialize bot
 bot = Client("RestrictedBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
