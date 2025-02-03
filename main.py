@@ -83,4 +83,12 @@ async def fetch_restricted_content(client, message):
     # Placeholder for fetching logic
     await message.reply_text("Fetching restricted content... (Implementation needed)")
 
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 8080))  # Default Port 8080
+    app.run(host="0.0.0.0", port=port)
+
 bot.run()
