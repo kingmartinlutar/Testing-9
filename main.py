@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from motor.motor_asyncio import AsyncIOMotorClient
 
 # Load environment variables
-API_ID = int(os.getenv("25444644"))
+API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("5969730414")
 BOT_TOKEN = os.getenv("8056263089:AAHMI88zp5GyHzeaQS82BKNzGFzEI_5DAPs")
 ADMINS = list(map(int, os.getenv("ADMINS", "5969730414").split()))
