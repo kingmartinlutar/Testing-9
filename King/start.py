@@ -10,7 +10,7 @@ from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated, User
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message 
 from config import API_ID, API_HASH, ERROR_MESSAGE
 from database.db import db
-from TechVJ.strings import HELP_TXT
+from king.strings import HELP_TXT
 
 class batch_temp(object):
     IS_BATCH = {}
