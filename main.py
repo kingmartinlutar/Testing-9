@@ -4,7 +4,6 @@ from flask import Flask
 from threading import Thread
 from pyrogram import Client, filters
 from motor.motor_asyncio import AsyncIOMotorClient
-
 from config import API_ID, API_HASH, BOT_TOKEN
 
 class Bot(Client):
