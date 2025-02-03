@@ -4,7 +4,10 @@ from flask import Flask
 from threading import Thread
 from pyrogram import Client, filters
 from motor.motor_asyncio import AsyncIOMotorClient
-from env import API_ID, API_HASH, BOT_TOKEN
+
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 class Bot(Client):
 
@@ -19,22 +22,15 @@ class Bot(Client):
             sleep_threshold=10
         )
 
-      
     async def start(self):
-            
         await super().start()
         print('Bot Started Powered By @VJ_Botz')
 
     async def stop(self, *args):
-
         await super().stop()
         print('Bot Stopped Bye')
 
-
 # Load environment variables
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
-BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMINS = list(map(int, os.getenv("ADMINS", "").split()))
 DB_URI = os.getenv("DB_URI")
 ERROR_MESSAGE = os.getenv("ERROR_MESSAGE", "False").lower() == "true"
