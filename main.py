@@ -14,6 +14,16 @@ ERROR_MESSAGE = os.getenv("ERROR_MESSAGE", "False").lower() == "true"
 # Initialize bot
 bot = Client("RestrictedBot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 8080))  # Default Port 8080
+    app.run(host="0.0.0.0", port=port)
+
+# Run Flask Server in a separate thread
+Thread(target=run_flask).start()
 # MongoDB Client
 db_client = AsyncIOMotorClient(DB_URI)
 db = db_client["telegram_bot"]
@@ -82,16 +92,5 @@ async def broadcast(client, message):
 async def fetch_restricted_content(client, message):
     # Placeholder for fetching logic
     await message.reply_text("Fetching restricted content... (Implementation needed)")
-
-@app.route("/")
-def home():
-    return "Bot is running!"
-
-def run_flask():
-    port = int(os.environ.get("PORT", 8080))  # Default Port 8080
-    app.run(host="0.0.0.0", port=port)
-
-# Run Flask Server in a separate thread
-Thread(target=run_flask).start()
 
 bot.run()
