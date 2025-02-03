@@ -91,4 +91,7 @@ def run_flask():
     port = int(os.environ.get("PORT", 8080))  # Default Port 8080
     app.run(host="0.0.0.0", port=port)
 
+# Run Flask Server in a separate thread
+Thread(target=run_flask).start()
+
 bot.run()
